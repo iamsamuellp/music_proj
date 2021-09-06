@@ -15,7 +15,7 @@ class SongList(APIView):
       serializer = SongSerializer(song, many=True)
       return Response(serializer.data)
 
-    def get(self, request): 
+    def post(self, request): 
       serializer = SongSerializer(data=request.data)
       if serializer.is_valid():
         serializer.save()
